@@ -342,8 +342,20 @@ export default function Page() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 dark:bg-black text-slate-400 py-8 text-center transition-colors duration-300">
-        <p>© 2026 SyntaxLab. Semua hak cipta dilindungi.</p>
+      <footer className="bg-slate-900 text-slate-400 py-10 px-4 text-center transition-colors duration-300 border-t border-slate-800">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm">© 2026 SyntaxLab. Semua hak cipta dilindungi.</p>
+          
+          {/* Tautan Media Sosial */}
+          <div className="flex items-center space-x-6 text-sm">
+            <a href="https://instagram.com/syntaxlab_official" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              Instagram (@syntaxlab)
+            </a>
+            <a href="https://tiktok.com/@syntax.lab5" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              TikTok (@syntaxlab)
+            </a>
+          </div>
+        </div>
       </footer>
     </main>
   );
