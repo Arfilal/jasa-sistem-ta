@@ -89,7 +89,7 @@ export default function Page() {
       <nav className="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-black text-blue-600 tracking-tighter">
-            Jasa<span className="text-slate-800 dark:text-white transition-colors duration-300">Sistem</span>
+            Syntax<span className="text-slate-800 dark:text-white transition-colors duration-300">Lab</span>
           </div>
           
           <div className="flex items-center gap-4">
@@ -118,10 +118,10 @@ export default function Page() {
       <Reveal>
         <section className="flex flex-col items-center justify-center text-center pb-16 px-4">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 dark:text-white leading-tight transition-colors duration-300">
-            Bikin Sistem TA & Skripsi <br/> <span className="text-blue-600">Tanpa Pusing & Tepat Waktu</span>
+            Solusi Pembuatan Website & Aplikasi Kustom <br/> <span className="text-blue-600">Adaptif, Cepat, & Profesional</span>
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mb-10 transition-colors duration-300">
-            Jasa pembuatan website dan aplikasi untuk tugas akhir, skripsi, dan proyek kecil. Harga transparan, kodingan rapi, dan dibimbing sampai paham.
+            Jasa pengembangan software, company profile, sistem informasi, hingga tugas akhir. Kodingan rapi, bebas bug, dan dibimbing sampai paham.
           </p>
           <a id="kontak" href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-lg shadow-lg hover:shadow-blue-500/30 hover:bg-blue-700 transition-all duration-300">
             Konsultasi Gratis via WhatsApp
@@ -138,9 +138,9 @@ export default function Page() {
               <div className="ml-4 text-xs font-mono text-slate-400">status.js</div>
             </div>
             <div className="p-6 text-sm md:text-base font-mono overflow-x-auto leading-relaxed text-slate-300">
-              <p><span className="text-pink-500">const</span> <span className="text-blue-400">jasaSistem</span> = {'{'}</p>
-              <p className="pl-6">status: <span className="text-yellow-300">"Tersedia untuk Proyek Baru"</span>,</p>
-              <p className="pl-6">layanan: [<span className="text-yellow-300">"Sistem TA"</span>, <span className="text-yellow-300">"Skripsi"</span>, <span className="text-yellow-300">"Web Bisnis"</span>],</p>
+              <p><span className="text-pink-500">const</span> <span className="text-blue-400">SyntaxLab</span> = {'{'}</p>
+              <p className="pl-6">status: <span className="text-yellow-300">"Siap Menerima Proyek Baru"</span>,</p>
+              <p className="pl-6">layanan: [<span className="text-yellow-300">"Sistem Informasi"</span>, <span className="text-yellow-300">"Web Bisnis & UMKM"</span>, <span className="text-yellow-300">"Aplikasi Kustom"</span>, <span className="text-yellow-300">"Tugas Akhir & Skripsi"</span>],</p>
               <p className="pl-6">garansi: <span className="text-pink-500">true</span>,</p>
               <p className="pl-6">kualitas: <span className="text-yellow-300">"100% Bebas Bug"</span></p>
               <p>{'}'};</p>
@@ -343,7 +343,7 @@ export default function Page() {
 
       {/* Footer */}
       <footer className="bg-slate-900 dark:bg-black text-slate-400 py-8 text-center transition-colors duration-300">
-        <p>© 2026 JasaSistem. Semua hak cipta dilindungi.</p>
+        <p>© 2026 SyntaxLab. Semua hak cipta dilindungi.</p>
       </footer>
     </main>
   );
