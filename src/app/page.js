@@ -191,6 +191,27 @@ export default function Page() {
         </Reveal>
       </section>
 
+      {/* Pricing/Estimasi Harga Section */}
+      <section className="py-20 bg-white dark:bg-slate-800 px-4 transition-colors duration-300">
+        <Reveal>
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-10 text-slate-900 dark:text-white">Estimasi Harga Paket</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="p-6 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-sm">
+                <h3 className="text-xl font-bold mb-3 text-blue-600">Paket Skripsi / Tugas Akhir</h3>
+                <p className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Mulai dari Rp 750.000</p>
+                <p className="text-slate-600 dark:text-slate-400 text-sm">Cocok untuk mahasiswa tingkat akhir yang butuh sistem siap sidang lengkap dengan bimbingan.</p>
+              </div>
+              <div className="p-6 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-sm">
+                <h3 className="text-xl font-bold mb-3 text-blue-600">Paket Web Bisnis / Company Profile</h3>
+                <p className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Mulai dari Rp 1.500.000</p>
+                <p className="text-slate-600 dark:text-slate-400 text-sm">Cocok untuk UMKM, instansi, atau perusahaan yang ingin memperluas jangkauan digital.</p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* PORTFOLIO: Hanya menampilkan 1 karya nyata (Sistem Presensi PMI Putri) */}
       <section className="py-20 bg-white dark:bg-slate-900 px-4 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
         <Reveal>
@@ -223,35 +244,47 @@ export default function Page() {
       </section>
 
       {/* Alur Kerja Section */}
-      <section className="py-20 bg-slate-50 dark:bg-slate-800/50 px-4 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
-        <Reveal>
-          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-10 text-slate-900 dark:text-white">Alur Pemesanan</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-left">
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 relative overflow-hidden transition-colors shadow-sm">
-                <div className="text-slate-100 dark:text-slate-700 font-black text-6xl absolute -top-2 -right-2 opacity-60">1</div>
-                <h4 className="font-bold text-lg mb-2 relative z-10 dark:text-white">Konsultasi</h4>
-                <p className="text-sm text-slate-600 dark:text-slate-400 relative z-10">Diskusikan fitur yang dibutuhkan dan kesepakatan harga sistem.</p>
-              </div>
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 relative overflow-hidden transition-colors shadow-sm">
-                <div className="text-slate-100 dark:text-slate-700 font-black text-6xl absolute -top-2 -right-2 opacity-60">2</div>
-                <h4 className="font-bold text-lg mb-2 relative z-10 dark:text-white">DP Masuk</h4>
-                <p className="text-sm text-slate-600 dark:text-slate-400 relative z-10">Pembayaran uang muka minimal 40% untuk memulai koding.</p>
-              </div>
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 relative overflow-hidden transition-colors shadow-sm">
-                <div className="text-slate-100 dark:text-slate-700 font-black text-6xl absolute -top-2 -right-2 opacity-60">3</div>
-                <h4 className="font-bold text-lg mb-2 relative z-10 dark:text-white">Proses & Demo</h4>
-                <p className="text-sm text-slate-600 dark:text-slate-400 relative z-10">Pengerjaan sistem disertai update progres dan demo hasil.</p>
-              </div>
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 relative overflow-hidden transition-colors shadow-sm">
-                <div className="text-slate-100 dark:text-slate-700 font-black text-6xl absolute -top-2 -right-2 opacity-60">4</div>
-                <h4 className="font-bold text-lg mb-2 relative z-10 dark:text-white">Serah Terima</h4>
-                <p className="text-sm text-slate-600 dark:text-slate-400 relative z-10">Pelunasan sisa biaya dan penyerahan source code lengkap.</p>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-      </section>
+<section className="py-20 bg-slate-50 dark:bg-slate-800/50 px-4 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
+  <Reveal>
+    <div className="max-w-5xl mx-auto text-center">
+      <h2 className="text-3xl font-bold mb-10 text-slate-900 dark:text-white">Alur Pemesanan</h2>
+      
+      {/* Baris 1: Berisi 3 Card di atas */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-6">
+        <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 relative overflow-hidden transition-colors shadow-sm">
+          <div className="text-slate-100 dark:text-slate-700 font-black text-6xl absolute -top-2 -right-2 opacity-60">1</div>
+          <h4 className="font-bold text-lg mb-2 relative z-10 text-slate-900 dark:text-white">Konsultasi</h4>
+          <p className="text-sm text-slate-600 dark:text-slate-400 relative z-10">Diskusikan fitur yang dibutuhkan dan kesepakatan harga sistem.</p>
+        </div>
+        <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 relative overflow-hidden transition-colors shadow-sm">
+          <div className="text-slate-100 dark:text-slate-700 font-black text-6xl absolute -top-2 -right-2 opacity-60">2</div>
+          <h4 className="font-bold text-lg mb-2 relative z-10 text-slate-900 dark:text-white">DP Masuk</h4>
+          <p className="text-sm text-slate-600 dark:text-slate-400 relative z-10">Pembayaran uang muka minimal 40% untuk memulai koding.</p>
+        </div>
+        <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 relative overflow-hidden transition-colors shadow-sm">
+          <div className="text-slate-100 dark:text-slate-700 font-black text-6xl absolute -top-2 -right-2 opacity-60">3</div>
+          <h4 className="font-bold text-lg mb-2 relative z-10 text-slate-900 dark:text-white">Proses & Demo</h4>
+          <p className="text-sm text-slate-600 dark:text-slate-400 relative z-10">Pengerjaan sistem disertai update progres dan demo hasil.</p>
+        </div>
+      </div>
+
+      {/* Baris 2: Berisi 2 Card di bawah (diatur agar otomatis rata tengah) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
+        <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 relative overflow-hidden transition-colors shadow-sm">
+          <div className="text-slate-100 dark:text-slate-700 font-black text-6xl absolute -top-2 -right-2 opacity-60">4</div>
+          <h4 className="font-bold text-lg mb-2 relative z-10 text-slate-900 dark:text-white">Serah Terima</h4>
+          <p className="text-sm text-slate-600 dark:text-slate-400 relative z-10">Pelunasan sisa biaya dan penyerahan source code lengkap.</p>
+        </div>
+        <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 relative overflow-hidden transition-colors shadow-sm flex flex-col justify-center">
+          <div className="text-slate-100 dark:text-slate-700 font-black text-6xl absolute -top-2 -right-2 opacity-60">5</div>
+          <h4 className="font-bold text-lg mb-1 relative z-10 text-slate-900 dark:text-white">⏱️ Estimasi Waktu</h4>
+          <p className="text-sm text-slate-600 dark:text-slate-400 relative z-10 font-medium">14 - 30 hari kerja tergantung tingkat kesulitan sistem.</p>
+        </div>
+      </div>
+
+    </div>
+  </Reveal>
+</section>
 
       {/* TESTIMONI: Difokuskan pada ulasan asli Aulia Putri */}
       <section className="py-20 bg-blue-600 dark:bg-blue-900 px-4 transition-colors duration-300">
