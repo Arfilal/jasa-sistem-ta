@@ -338,7 +338,7 @@ export default function Page() {
             {/* Grid 3 Kolom untuk Testimoni */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
               
-              {/* Testimoni 1 */}
+              {/* Testimoni 1: Aulia Putri (5 Bintang Penuh) */}
               <div className="bg-white/10 dark:bg-black/20 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-lg flex flex-col justify-between">
                 <div>
                   <div className="flex text-yellow-300 mb-3">{"★".repeat(5)}</div>
@@ -355,10 +355,12 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* Testimoni 2 */}
+              {/* Testimoni 2: Arfilal Faiznadi (4 Bintang) */}
               <div className="bg-white/10 dark:bg-black/20 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-lg flex flex-col justify-between">
                 <div>
-                  <div className="flex text-yellow-300 mb-3">{"★".repeat(5)}</div>
+                  <div className="flex text-yellow-300 mb-3">
+                    {"★".repeat(4)}<span className="text-white/40">★</span>
+                  </div>
                   <p className="text-white text-sm italic leading-relaxed mb-6">
                     "Mantap banget bikin sistem presensi Smanda di sini! Fitur absen geofencing lancar, rekap wali kelas & kesiswaan rapi tinggal cetak Excel, dan dibimbing sampai paham buat sidang."
                   </p>
@@ -372,12 +374,15 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* Testimoni 3 (Revano Augustofa - BARU) */}
+              {/* Testimoni 3: Revano Augustofa (4.5 Bintang / 4 Penuh + 1 Setengah) */}
               <div className="bg-white/10 dark:bg-black/20 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-lg flex flex-col justify-between">
                 <div>
-                  <div className="flex text-yellow-300 mb-3">
-                    {"★".repeat(4)}<span className="text-yellow-200">★</span>
-                    <span className="text-xs ml-1 bg-white/20 px-1.5 py-0.5 rounded text-white font-mono">4.5</span>
+                  <div className="flex text-yellow-300 mb-3 relative">
+                    {"★".repeat(4)}
+                    <span className="relative inline-block text-white/40">
+                      ★
+                      <span className="absolute top-0 left-0 overflow-hidden text-yellow-300 w-[50%]">★</span>
+                    </span>
                   </div>
                   <p className="text-white text-sm italic leading-relaxed mb-6">
                     "Hasilnya kurang lebih bagus, untuk semua fiturnya berfungsi dengan semestinya.. overall oke 👍🏽"
