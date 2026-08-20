@@ -238,10 +238,10 @@ export default function Page() {
                     Aplikasi presensi khusus karyawan dan relawan PMI berbasis <strong>Geofencing</strong> dan perhitungan radius menggunakan rumus <strong>Haversine</strong> agar absensi akurat.
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs font-semibold px-3 py-1 bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 rounded-full">Mobile App</span>
-                  <span className="text-xs font-semibold px-3 py-1 bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300 rounded-full">Geofencing</span>
-                  <span className="text-xs font-semibold px-3 py-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 rounded-full">Haversine</span>
+                <div className="flex flex-wrap gap-1.5">
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 rounded-full">Mobile App</span>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300 rounded-full">Geofencing</span>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 rounded-full">Haversine</span>
                 </div>
               </div>
 
@@ -256,10 +256,10 @@ export default function Page() {
                     Platform web & mobile terintegrasi untuk absensi siswa dengan <strong>Geofencing</strong> & foto real-time. Dilengkapi multi-role (Wali Kelas, Kesiswaan, Operator) & cetak Excel otomatis.
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs font-semibold px-3 py-1 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 rounded-full">PHP & Laravel</span>
-                  <span className="text-xs font-semibold px-3 py-1 bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 rounded-full">Web Responsive</span>
-                  <span className="text-xs font-semibold px-3 py-1 bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 rounded-full">Multi-Role</span>
+                <div className="flex flex-wrap gap-1.5">
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 rounded-full">PHP & Laravel</span>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 rounded-full">Web Responsive</span>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 rounded-full">Multi-Role</span>
                 </div>
               </div>
 
@@ -274,10 +274,10 @@ export default function Page() {
                     Aplikasi pengelolaan progress tugas akhir berbasis mobile untuk dosen dan mahasiswa dalam skala jurusan. Membantu tracking proposal, pembimbing, hingga seminar.
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs font-semibold px-3 py-1 bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 rounded-full">Mobile App</span>
-                  <span className="text-xs font-semibold px-3 py-1 bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 rounded-full">Skala Jurusan</span>
-                  <span className="text-xs font-semibold px-3 py-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 rounded-full">push notifikasi realtime</span>
+                <div className="flex flex-wrap gap-1.5">
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 rounded-full">Mobile App</span>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 rounded-full">Skala Jurusan</span>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 rounded-full">Push Notif</span>
                 </div>
               </div>
 
