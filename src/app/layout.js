@@ -12,8 +12,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "JasaSistem - Pembuatan Sistem TA & Skripsi",
-  description: "Jasa pembuatan website dan aplikasi untuk tugas akhir, skripsi, dan proyek kecil yang profesional dan terpercaya.",
+  title: "SyntaxLab - Pembuatan Sistem & Web Profesional",
+  description: "Jasa pembuatan website, sistem informasi, dan tugas akhir.",
+  icons: {
+    icon: "/favicon.png", // Sesuaikan dengan nama file gambar yang kamu simpan di folder public
+  },
 };
 
 export default function RootLayout({ children }) {
