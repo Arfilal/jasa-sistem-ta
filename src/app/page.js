@@ -349,7 +349,7 @@ export default function Page() {
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center font-bold text-white text-sm">P</div>
                   <div>
-                    <h4 className="font-bold text-white text-xs">Aulia Putri</h4>
+                    <h4 className="font-bold text-white text-xs">Aulia.P</h4>
                     <p className="text-[11px] text-blue-200">Mahasiswa Teknik Informatika</p>
                   </div>
                 </div>
@@ -368,7 +368,7 @@ export default function Page() {
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center font-bold text-white text-sm">A</div>
                   <div>
-                    <h4 className="font-bold text-white text-xs">Arfilal Faiznadi</h4>
+                    <h4 className="font-bold text-white text-xs">Arfilal.F</h4>
                     <p className="text-[11px] text-blue-200">Mahasiswa Teknik Informatika</p>
                   </div>
                 </div>
@@ -391,7 +391,7 @@ export default function Page() {
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center font-bold text-white text-sm">R</div>
                   <div>
-                    <h4 className="font-bold text-white text-xs">Revano Augustofa</h4>
+                    <h4 className="font-bold text-white text-xs">Revano.A</h4>
                     <p className="text-[11px] text-blue-200">Mahasiswa Teknik Informatika</p>
                   </div>
                 </div>
