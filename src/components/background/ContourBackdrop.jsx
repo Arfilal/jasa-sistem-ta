@@ -34,12 +34,13 @@ export default function ContourBackdrop({ ready }) {
     let running = true;
     let last = performance.now();
 
-    // --- prerender kontur sekali ke offscreen (lebar 2x periode loop) ---
+    // --- prerender 1 tile kontur (lebar = 1 periode; pola sinus
+    // berulang tepat tiap `period`, jadi tile bisa diulang mulus) ---
     const period = 240;
     const off = document.createElement("canvas");
     const seed = (i) => (i * 137.5) % 360; // deterministik, tanpa Math.random
     function prerender() {
-      off.width = Math.max(1, Math.round(period * 2 * dpr));
+      off.width = Math.max(1, Math.round(period * dpr));
       off.height = Math.max(1, Math.round(h * dpr));
       const c = off.getContext("2d");
       c.scale(dpr, dpr);
@@ -51,7 +52,7 @@ export default function ContourBackdrop({ ready }) {
         const amp = 6 + (i % 5) * 4;
         const ph = (seed(i) * Math.PI) / 180;
         c.beginPath();
-        for (let x = 0; x <= period * 2; x += 12) {
+        for (let x = 0; x <= period; x += 12) {
           const y =
             y0 +
             Math.sin((x / period) * Math.PI * 2 + ph) * amp +
@@ -77,10 +78,12 @@ export default function ContourBackdrop({ ready }) {
     function draw(now) {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, w, h);
-      // blit ganda agar loop geser mulus tanpa celah
+      // Ubin tile sebanyak yang dibutuhkan selebar canvas — sebelumnya
+      // hanya 2 salinan sehingga layar lebar (>960px) kosong di kanan.
       ctx.globalAlpha = 1;
-      ctx.drawImage(off, -offset, 0, period * 2, h);
-      ctx.drawImage(off, -offset + period * 2, 0, period * 2, h);
+      for (let x = -offset; x < w; x += period) {
+        ctx.drawImage(off, x, 0, period, h);
+      }
 
       // marker emas tunggal (sepertiga kanan, 40% tinggi)
       const mx = w * 0.68;
