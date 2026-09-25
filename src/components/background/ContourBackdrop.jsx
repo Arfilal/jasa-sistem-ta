@@ -45,7 +45,7 @@ export default function ContourBackdrop({ ready }) {
       c.scale(dpr, dpr);
       c.strokeStyle = CONTOUR;
       c.lineWidth = 1;
-      c.globalAlpha = 0.55;
+      c.globalAlpha = 0.62;
       for (let i = 0; i < LINES; i++) {
         const y0 = (i / (LINES - 1)) * h;
         const amp = 6 + (i % 5) * 4;

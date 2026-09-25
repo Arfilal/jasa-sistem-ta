@@ -82,7 +82,7 @@ Skala (mobile-first, `clamp`): h1 `clamp(2.5rem, 6vw, 4rem)` / 700 / `-0.02em` (
 Urutan section sesuai PRD §5. Yang berubah di v1.1 hanya Hero; sisanya tetap dengan `signal` → `gold`:
 
 - **Hero (BARU):** backdrop kontur full-bleed di belakang; konten kiri: eyebrow, H1 (dengan frasa serif italic), sub, CTA + mikro-note, lalu status card (badge + checklist 2 kolom + garansi). Mobile: susun vertikal, backdrop menipis (opacity dikurangi).
-- **Tech strip:** satu baris horizontal (wrap) item sans + penanda kotak emas kecil, tanpa card.
+- **Tech strip:** chip ber-border (panel, hairline, hover emas) berisi nama stack + penanda kotak emas — tanpa logo brand (trademark, request tambahan, risiko akurasi). Jujur & ringan.
 - **Portfolio:** kartu fitur besar #1 (horizontal, gambar kiri) + dua kartu offset (satu turun di desktop) — hierarki = prioritas.
 - **Layanan:** 3 kolom; kolom tengah highlight hairline `gold` (Sistem Informasi = revenue utama). Penanda tiap layanan: hairline emas 24px + judul (bukan ikon, bukan marker kode).
 - **Harga:** 2 kolom tak simetris (5:7); angka harga `tabular-nums`, paket Bisnis highlight emas.

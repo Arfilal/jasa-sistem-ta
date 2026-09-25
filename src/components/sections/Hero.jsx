@@ -35,7 +35,7 @@ export default function Hero() {
       <div className="absolute inset-0" role="presentation">
         <ContourBackdrop ready={mounted} />
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_40%,transparent_40%,var(--color-paper)_100%)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_95%_90%_at_50%_36%,transparent_58%,var(--color-paper)_100%)]"
           aria-hidden="true"
         />
       </div>
