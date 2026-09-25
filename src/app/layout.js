@@ -1,22 +1,23 @@
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const grotesk = Space_Grotesk({
-  variable: "--font-grotesk",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const jetbrains = JetBrains_Mono({
-  variable: "--font-jetbrains",
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400"],
+  style: ["normal", "italic"],
 });
 
 export const metadata = {
   title: "SyntaxLab - Pembuatan Sistem & Web Profesional",
   description:
-    "Jasa pembuatan website, sistem informasi, dan tugas akhir. Kodingan rapi, bebas bug, dibimbing sampai paham.",
+    "Jasa pembuatan website, sistem informasi, dan tugas akhir. Rapi, bebas bug, dibimbing sampai paham.",
   icons: {
     icon: "/favicon.png",
   },
@@ -31,8 +32,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id" className={`${grotesk.variable} ${jetbrains.variable}`}>
-      <body className="min-h-screen overflow-x-clip bg-void font-display text-ink antialiased">
+    <html lang="id" className={`${jakarta.variable} ${instrument.variable}`}>
+      <body className="min-h-screen overflow-x-clip bg-paper font-display text-ink antialiased">
         {children}
       </body>
     </html>

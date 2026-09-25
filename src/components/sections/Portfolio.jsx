@@ -27,7 +27,7 @@ function Tags({ tags }) {
       {tags.map((t) => (
         <span
           key={t}
-          className="rounded-full border border-line bg-void px-3 py-1 font-mono text-[11px] text-muted"
+          className="rounded-full border border-line bg-paper px-3 py-1 text-[11px] font-medium text-muted"
         >
           {t}
         </span>
@@ -42,7 +42,7 @@ export default function Portfolio() {
   return (
     <Section id="karya" labelledby="karya-h" wide>
       <Reveal>
-        <SectionLabel>karya-nyata</SectionLabel>
+        <SectionLabel>Karya nyata</SectionLabel>
         <h2
           id="karya-h"
           className="max-w-[22ch] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold tracking-tight text-ink"
@@ -57,8 +57,8 @@ export default function Portfolio() {
 
       {/* kartu fitur: proyek utama, horizontal */}
       <Reveal className="mt-12">
-        <article className="group grid overflow-hidden rounded-xl border border-line bg-panel md:grid-cols-2">
-          <div className="relative h-60 border-b border-line bg-void md:h-auto md:min-h-[320px] md:border-b-0 md:border-r">
+        <article className="group grid overflow-hidden rounded-[14px] border border-line bg-panel shadow-[0_24px_60px_-40px_rgba(26,29,33,0.3)] md:grid-cols-2">
+          <div className="relative h-60 border-b border-line bg-panel-2 md:h-auto md:min-h-[320px] md:border-b-0 md:border-r">
             <Image
               src={featured.img}
               alt={featured.alt}
@@ -83,8 +83,8 @@ export default function Portfolio() {
       <div className="mt-8 grid gap-8 md:grid-cols-2">
         {rest.map((p, i) => (
           <Reveal key={p.title} delay={i * 0.08} className={i === 1 ? "md:mt-12" : ""}>
-            <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-line bg-panel">
-              <div className="relative h-56 border-b border-line bg-void">
+            <article className="group flex h-full flex-col overflow-hidden rounded-[14px] border border-line bg-panel">
+              <div className="relative h-56 border-b border-line bg-panel-2">
                 <Image
                   src={p.img}
                   alt={p.alt}

@@ -1,9 +1,9 @@
-// Label section gaya komentar terminal: "// karya-nyata".
-// Vernacular subjek (developer brand), bukan eyebrow ALL-CAPS generik.
+// Eyebrow netral-profesional: sentence-case + hairline emas.
+// Bukan gaya kode, bukan ALL-CAPS generik.
 export default function SectionLabel({ children }) {
   return (
-    <p className="mb-4 font-mono text-[13px] font-medium tracking-tight text-signal">
-      {"// "}
+    <p className="mb-4 flex items-center gap-3 text-[13px] font-semibold text-gold-deep">
+      <span className="h-px w-6 bg-gold" aria-hidden="true" />
       {children}
     </p>
   );

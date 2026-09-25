@@ -3,9 +3,9 @@ import { site } from "@/lib/content";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line px-6 py-10">
+    <footer className="border-t border-line bg-panel px-6 py-10">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-5 md:flex-row">
-        <p className="font-mono text-[13px] text-faint">{site.copyright}</p>
+        <p className="text-[13px] text-faint">{site.copyright}</p>
         <div className="flex items-center gap-7">
           <a
             href={site.instagram}

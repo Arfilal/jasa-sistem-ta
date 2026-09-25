@@ -3,12 +3,12 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import Reveal from "@/components/ui/Reveal";
 import { services } from "@/lib/content";
 
-// Penanda mono custom (">_", "//", "[]") — bukan ikon library generik.
+// Penanda struktural: hairline emas — bukan ikon, bukan marker kode.
 export default function Services() {
   return (
     <Section id="layanan" labelledby="layanan-h">
       <Reveal>
-        <SectionLabel>layanan</SectionLabel>
+        <SectionLabel>Layanan</SectionLabel>
         <h2
           id="layanan-h"
           className="max-w-[22ch] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold tracking-tight text-ink"
@@ -21,15 +21,13 @@ export default function Services() {
         {services.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.08}>
             <article
-              className={`h-full rounded-xl border bg-panel p-7 transition-colors duration-300 ${
+              className={`h-full rounded-[14px] border bg-panel p-7 transition-colors duration-300 ${
                 s.highlight
-                  ? "border-signal/60"
-                  : "border-line hover:border-muted/40"
+                  ? "border-gold"
+                  : "border-line hover:border-gold/60"
               }`}
             >
-              <p className="font-mono text-sm font-semibold text-signal" aria-hidden="true">
-                {s.marker}
-              </p>
+              <span className="block h-[3px] w-6 bg-gold" aria-hidden="true" />
               <h3 className="mt-4 text-xl font-bold tracking-tight text-ink">
                 {s.title}
               </h3>

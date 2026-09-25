@@ -1,25 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-void: #07090d;
-  --color-panel: #0c1016;
-  --color-panel-2: #10151d;
-  --color-line: #1d2532;
-  --color-ink: #e9eef5;
-  --color-muted: #9aa3b2;
-  --color-faint: #646e7e;
-  --color-signal: #ff5c1c;
-  --color-signal-ink: #160900;
-  --color-ok: #34d399;
-  --color-star: #ffc531;
-  /* syntax highlight terminal (konten, bukan aksen brand) */
-  --color-kw: #ff7ab2;
-  --color-var: #7ab8ff;
-  --color-str: #ffd866;
-  --color-codegreen: #7ae0a3;
+  --color-paper: #faf8f4;
+  --color-panel: #ffffff;
+  --color-panel-2: #f3efe6;
+  --color-line: #e4ded2;
+  --color-ink: #1a1d21;
+  --color-muted: #5c6470;
+  --color-faint: #8a8f98;
+  --color-gold: #c9a254;
+  --color-gold-deep: #7a5f1e;
+  --color-ok: #1e9e6a;
+  --color-star: #9c6d00;
 
-  --font-display: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), Georgia, serif;
 }
 
 html {
@@ -33,41 +28,24 @@ html {
 }
 
 body {
-  background-color: var(--color-void);
+  background-color: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-display);
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background-color: var(--color-signal);
-  color: var(--color-signal-ink);
+  background-color: var(--color-gold);
+  color: var(--color-ink);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-signal);
+  outline: 2px solid var(--color-gold-deep);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* kursor ketik terminal */
-@keyframes caret-blink {
-  0%,
-  45% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
-
-.animate-caret {
-  animation: caret-blink 1.1s steps(1) infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-caret {
-    animation: none;
-  }
+/* angka harga: presisi tabular tanpa font mono */
+.tnum {
+  font-variant-numeric: tabular-nums;
 }

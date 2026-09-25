@@ -13,54 +13,24 @@ export const site = {
 };
 
 export const hero = {
-  label: "// jasa-pembuatan-sistem",
+  label: "Jasa pembuatan sistem",
   titleA: "Solusi Pembuatan Website & Aplikasi Kustom",
-  titleB: "Adaptif, Cepat, & Profesional",
+  titleAccent: "Adaptif, Cepat,",
+  titleB: "& Profesional",
   sub: "Jasa pengembangan software, company profile, sistem informasi, hingga tugas akhir. Kodingan rapi, bebas bug, dan dibimbing sampai paham.",
 };
 
-// Baris terminal: [teks, classWarna]. Kelas memakai token di globals.css.
-export const terminalLines = [
-  [
-    ["const ", "text-kw"],
-    ["SyntaxLab ", "text-var"],
-    ["= {", "text-muted"],
+// Info status (pengganti terminal v1.0): isi identik, bentuk kartu elegan.
+export const status = {
+  badge: "Siap Menerima Proyek Baru",
+  services: [
+    "Sistem Informasi",
+    "Web Bisnis & UMKM",
+    "Aplikasi Kustom",
+    "Tugas Akhir & Skripsi",
   ],
-  [
-    ["  status: ", "text-muted"],
-    ['"Siap Menerima Proyek Baru"', "text-str"],
-    [",", "text-muted"],
-  ],
-  [
-    ["  layanan: [", "text-muted"],
-    ['"Sistem Informasi"', "text-str"],
-    [", ", "text-muted"],
-    ['"Web Bisnis & UMKM"', "text-str"],
-    [", ", "text-muted"],
-    ['"Aplikasi Kustom"', "text-str"],
-    [", ", "text-muted"],
-    ['"Tugas Akhir & Skripsi"', "text-str"],
-    ["],", "text-muted"],
-  ],
-  [
-    ["  garansi: ", "text-muted"],
-    ["true", "text-kw"],
-    [",", "text-muted"],
-  ],
-  [
-    ["  kualitas: ", "text-muted"],
-    ['"100% Bebas Bug"', "text-str"],
-  ],
-  [
-    ["};", "text-muted"],
-  ],
-  [
-    ["// Hubungi kami untuk konsultasi lebih lanjut!", "text-faint"],
-  ],
-  [
-    ["// Proses pengerjaan cepat dan kodingan mudah dipahami.", "text-faint"],
-  ],
-];
+  guarantee: "Garansi revisi · 100% bebas bug",
+};
 
 export const tech = [
   "Next.js & React",
@@ -73,19 +43,16 @@ export const tech = [
 
 export const services = [
   {
-    marker: ">_",
     title: "Sistem Informasi",
     desc: "Pembuatan sistem manajemen, kasir, inventori, dan portal web kampus atau sekolah.",
     highlight: true,
   },
   {
-    marker: "//",
     title: "SPK & Algoritma",
     desc: "Implementasi Sistem Pendukung Keputusan, Data Mining, atau algoritma skripsi spesifik.",
     highlight: false,
   },
   {
-    marker: "[]",
     title: "Web Profil & Bisnis",
     desc: "Website company profile yang responsif, cepat, dan elegan untuk meningkatkan kredibilitas.",
     highlight: false,
@@ -94,7 +61,7 @@ export const services = [
 
 export const pricing = [
   {
-    label: "// skripsi",
+    label: "Paket skripsi",
     title: "Paket Skripsi / Tugas Akhir",
     price: "Rp 750.000",
     prefix: "Mulai dari",
@@ -102,7 +69,7 @@ export const pricing = [
     featured: false,
   },
   {
-    label: "// bisnis",
+    label: "Paket bisnis",
     title: "Paket Web Bisnis / Company Profile",
     price: "Rp 1.500.000",
     prefix: "Mulai dari",

@@ -11,8 +11,8 @@ function Item({ q, a, open, onToggle, index }) {
   const panelId = `faq-panel-${index}`;
   return (
     <div
-      className={`overflow-hidden rounded-xl border bg-panel transition-colors duration-300 ${
-        open ? "border-signal/50" : "border-line"
+      className={`overflow-hidden rounded-[14px] border bg-panel transition-colors duration-300 ${
+        open ? "border-gold" : "border-line"
       }`}
     >
       <h3>
@@ -25,7 +25,7 @@ function Item({ q, a, open, onToggle, index }) {
         >
           <span className="text-[17px] font-bold tracking-tight text-ink">{q}</span>
           <span
-            className={`shrink-0 font-mono text-xl leading-none text-signal transition-transform duration-300 ${
+            className={`shrink-0 text-xl leading-none text-gold-deep transition-transform duration-300 ${
               open ? "rotate-45" : ""
             }`}
             aria-hidden="true"
@@ -59,7 +59,7 @@ export default function Faq() {
     <Section id="faq" labelledby="faq-h">
       <div className="mx-auto max-w-3xl">
         <Reveal>
-          <SectionLabel>faq</SectionLabel>
+          <SectionLabel>FAQ</SectionLabel>
           <h2
             id="faq-h"
             className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold tracking-tight text-ink"

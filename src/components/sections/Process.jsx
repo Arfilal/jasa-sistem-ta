@@ -9,7 +9,7 @@ export default function Process() {
   return (
     <Section id="alur" labelledby="alur-h">
       <Reveal>
-        <SectionLabel>alur-pemesanan</SectionLabel>
+        <SectionLabel>Alur pemesanan</SectionLabel>
         <h2
           id="alur-h"
           className="max-w-[22ch] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold tracking-tight text-ink"
@@ -26,7 +26,7 @@ export default function Process() {
         {process.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.08}>
             <li className="relative">
-              <p className="relative z-10 mb-4 inline-block bg-void pr-4 font-mono text-sm font-semibold text-signal">
+              <p className="relative z-10 mb-4 inline-block bg-paper pr-4 text-sm font-bold text-gold-deep">
                 {String(i + 1).padStart(2, "0")}
               </p>
               <h3 className="text-lg font-bold tracking-tight text-ink">
