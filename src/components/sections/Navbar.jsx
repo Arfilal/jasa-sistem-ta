@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/lib/content";
 
 // Blur di navbar fungsional (keterbacaan saat scroll) — satu-satunya blur yg diizinkan.
@@ -8,9 +9,9 @@ export default function Navbar() {
       className="fixed inset-x-0 top-0 z-50 border-b border-line bg-paper/85 backdrop-blur-md"
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#atas" className="text-xl font-bold tracking-tight text-ink">
+        <Link href="/" className="text-xl font-bold tracking-tight text-ink">
           Syntax<span className="text-gold-deep">Lab</span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-7 md:flex">
           {[
@@ -31,13 +32,6 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <p className="hidden items-center gap-2 text-xs font-medium text-muted lg:flex">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ok opacity-60" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-ok" />
-            </span>
-            Siap menerima proyek
-          </p>
           <a
             href={site.wa}
             target="_blank"

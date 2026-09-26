@@ -13,7 +13,7 @@ export default function Services() {
           id="layanan-h"
           className="max-w-[22ch] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold tracking-tight text-ink"
         >
-          Layanan & keahlian kami
+          Layanan kami
         </h2>
       </Reveal>
 

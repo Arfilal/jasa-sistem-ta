@@ -9,6 +9,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import Faq from "@/components/sections/Faq";
 import FinalCta from "@/components/sections/FinalCta";
 import Footer from "@/components/sections/Footer";
+import BackToTop from "@/components/ui/BackToTop";
 
 // Komposisi saja — seluruh konten & logika tinggal di section masing-masing.
 // Urutan: proof early (portfolio sebelum harga), sesuai PRD §5.
@@ -28,6 +29,7 @@ export default function Page() {
         <FinalCta />
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 }
