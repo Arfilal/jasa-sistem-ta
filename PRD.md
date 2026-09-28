@@ -1,140 +1,120 @@
-# PRD — Redesign Total Landing Page SyntaxLab
+# PRD — Landing Page SyntaxLab (redesain total)
 
-**Versi:** 1.1 · **Tanggal:** 26 Sep 2026 · **Status:** Draft — menunggu review owner
-**Repo:** `Arfilal/jasa-sistem-ta` (live: `syntaxlab.biz.id`) · **Stack:** Next.js 16 + React 19 + Tailwind CSS v4 (dipertahankan)
+**Versi:** 2.0 · **Tanggal:** 27 Sep 2026 · **Status:** Draft
+**Repo:** `Arfilal/jasa-sistem-ta` (live: `syntaxlab.biz.id`) · **Stack:** Next.js 16 + React 19 + Tailwind v4 + GSAP (JavaScript, tanpa TS)
+**Pasangan:** `design.md` v2.0 · `PRODUCT.md`
 
-## Changelog v1.0 → v1.1
+## Changelog v1.1 → v2.0
 
-Keputusan owner 26 Sep 2026 — perubahan arah tema (bukan dari nol):
-
-1. **Tema terang satu surface** (menggantikan dark-only): audiens campuran mahasiswa + UMKM/instansi awam teknis butuh kesan profesional & tepercaya, bukan niche hacker/terminal.
-2. **Terminal `status.js` dihapus** → diganti status card elegan (badge + checklist layanan + baris garansi). Info sama persis, bentuk bukan kode.
-3. **Tipografi identitas diganti**: Space Grotesk + JetBrains Mono → Plus Jakarta Sans + Instrument Serif italic (Opsi A, lihat `design.md` §2.2). Mono dihapus total; angka pakai `tabular-nums`.
-4. **Aksen oranye → emas/brass** (`#C9A254`): radar sebagai alasan semantik sudah tidak ada; emas = hangat, premium, meyakinkan untuk klien bisnis.
-5. **Three.js/WebGL dihapus** → background Canvas 2D "kontur topografi" (ambience, bukan atraksi). Alasan: lebih murah (tanpa dep, tanpa WebGL), cukup untuk efek yang diinginkan, aman untuk target Lighthouse.
-6. §1, §3, §4, §5, §7, §8, §9 disesuaikan; **§6 tidak berubah makna** (satu baris bentuk-baru dicatat); urutan section, proof-early, anti-slop, dan alur kerja tetap.
+1. **Dokumen diluruskan ke realitas implementasi:** palet teal/navy di atas paper + section gelap/terang bergantian (bukan emas/terang); Geist + JetBrains Mono (bukan Plus Jakarta Sans + Instrument Serif); GSAP + ScrollTrigger (bukan framer-motion); backdrop canvas dihapus.
+2. **Section "Estimasi Harga" → "Informasi":** satu harga **"Mulai dari Rp500 ribu"** + `priceNote` + 6 alasan (framing perusahaan/UMKM, tanpa konteks mahasiswa/TA) + CTA "Tanya harga via WhatsApp". Dua paket lama (Rp750.000 / Rp1.500.000) dihapus dari halaman — keputusan owner. Nav "Harga" → "Informasi" (`#informasi`).
+3. **Konsep anti-AI diperketat** (design.md §1): hapus eyebrow label mono uppercase (termasuk komponen `SectionLabel`), hapus span teal di heading, hapus all-caps ber-tracking lebar, angka urutan netral, Alur & Informasi pakai baris hairline (bukan kartu rounded), poster Hero jadi kalimat biasa, hapus animasi ping/loop dekoratif, badge "Paling Populer" dihapus.
+4. **Hapus komponen mati:** `ui/SectionLabel.jsx`, `ui/StatusCard.jsx`.
 
 ---
 
 ## 1. Latar & Tujuan
 
-Landing page saat ini (satu file `src/app/page.js` monolit, tanpa diferensiasi visual) terlihat seperti template generik dan tidak mencerminkan positioning jasa profesional. Redesign total bertujuan:
+Landing page satu halaman sebagai satu-satunya etalase digital SyntaxLab. Tujuan:
 
-1. **Menaikkan konversi konsultasi WhatsApp** — pengunjung (mahasiswa TA & owner UMKM/instansi) paham tawaran dalam <10 detik dan menekan CTA.
-2. **Membangun trust lewat bukti awal** — portfolio nyata ditampilkan sebelum harga ("proof early").
-3. **Membangun kesan company profile premium** — terang, simpel, rapi, elegan; meyakinkan untuk klien bisnis yang awam teknis. Bukan "brand developer": tanpa terminal, tanpa label gaya kode, tanpa radar dashboard. Tetap bebas cliché AI (gradien ungu-biru, glassmorphism tanpa fungsi, ikon generik dalam lingkaran gradien, cream+terracotta generik).
+1. **Konversi konsultasi WhatsApp** — CTA utama `https://wa.me/6281392684232` di Hero, Final Cta, Footer, Informasi.
+2. **Bukti dulu, klaim kemudian** — portfolio (3 karya + screenshot nyata) tampil sebelum harga.
+3. **Kesan studio kecil yang jujur & rapi** — harga, waktu, dan batasan disebut terbuka; halaman terlihat dibuat, bukan template.
 
 ## 2. Target User
 
-| Persona | Ciri | Motivasi utama | Keraguan yang harus dijawab halaman |
-|---|---|---|---|
-| **Mahasiswa tingkat akhir (primer)** | Informatika/SI, kepepet deadline sidang, budget terbatas | "Sistemku jadi, bisa didemokan ke dosen, aku paham kodenya" | Apakah ini beneran bisa bikin sistem jalan? Apakah dibimbing sampai paham? Berapa harganya? |
-| **Pemilik UMKM/instansi (sekunder, awam teknis)** | Butuh company profile / sistem kasir / inventori | "Vendor ini profesional dan bisa dipercaya" | Apakah hasilnya profesional? Bagaimana alur & pembayarannya? |
+| | Primer | Sekunder |
+|---|---|---|
+| Siapa | Mahasiswa tingkat akhir (TA/skripsi) | UMKM / instansi awam teknis |
+| Kebutuhan | Sistem/web yang jalan + dibimbing sampai paham | Website/aplikasi bisnis yang profesional |
+| Kecemasan | Deadline kepepet, bug, harga mahal | Vendor abal-abal, harga tak jelas, komunikasi lambat |
+| Sinyal di halaman | Estimasi 14–30 hari, garansi revisi, "dibimbing sampai paham" | Harga "Mulai dari Rp500 ribu", alur pemesanan jelas, karya nyata |
 
-Keduanya datang dari link langsung/organik, mayoritas via **mobile**. Mereka tidak peduli preferensi tema — mereka peduli bukti, harga, dan cara pesan. Tema terang dipilih karena terasa terbuka & tepercaya bagi audiens non-teknis.
+## 3. Goals & Metrics
 
-## 3. Goals & Success Metrics
-
-| # | Metric | Target | Cara ukur |
-|---|---|---|---|
-| 1 | Lighthouse Performance (mobile) | ≥ 80 | `npm run build` + audit Chrome, dengan canvas aktif |
-| 2 | Lighthouse Performance (desktop) | ≥ 90 | idem |
-| 3 | Lighthouse Accessibility | ≥ 95 | idem (kontras di atas terang, landmark, focus, `aria` FAQ/canvas) |
-| 4 | Paritas konten | 100% — semua data §6 tampil, makna tidak berubah | checklist manual saat review per section |
-| 5 | Integritas aset & link | 3 PNG portfolio render, favicon tampil, link WA/IG/TikTok tepat | klik manual + `next build` tanpa 404 |
-| 6 | Build bersih | `npm run build` sukses, tanpa error/warning baru, tanpa `console.log` | CI/Vercel + review |
-| 7 | Canvas tidak merusak UX low-end | 1 frame statis & diam saat `prefers-reduced-motion`; pause saat offscreen/hidden; smooth di emulasi Moto G4 | testing manual §9 |
+| Goal | Metrik |
+|---|---|
+| Konversi WA | Klik CTA `wa.me` jadi kanal utama (tanpa analytics — observasi manual) |
+| Kepercayaan | 3 karya + 3 testimoni + statistik tampil sebelum harga |
+| Paritas konten | Semua teks/angka/link = `content.js` §6 — nol string hardcoded |
+| Kualitas | `npm run build` bersih; nol `console.log`/import mati; Lighthouse a11y/perf ≥ 90 |
+| Anti-template | Lulus checklist design.md §1 (tanpa eyebrow/span teal/all-caps/ping) |
 
 ## 4. Scope
 
-### In-scope (P0 — wajib)
+**P0 (wajib):**
+- Dokumen v2.0 (PRODUCT.md, design.md, PRD.md) — ini.
+- **Rencana A:** `content.js` hapus `pricing` → tambah `info`; `Pricing.jsx` → `Info.jsx` (id `informasi`); nav `#informasi`; swap di `page.js`.
+- **Rencana B:** sweep anti-AI per checklist design.md §1.1 (§11 baris).
+- Verifikasi: `npm run build` + screenshot per section.
 
-1. Hero + background Canvas 2D "kontur" (ambience ringan) + status card elegan (pengganti terminal).
-2. Strip teknologi (6 item).
-3. Portfolio "Karya Nyata Kami" — 3 proyek + 3 PNG existing via `next/image`.
-4. Layanan (3 kartu), Harga (2 paket), Alur (5 langkah), Testimoni (3), FAQ (3), Final CTA + Footer.
-5. Split `page.js` monolit menjadi komponen per section + `src/lib/content.js` sebagai satu sumber konten.
-6. Design system v1.1: token terang, tipografi (Plus Jakarta Sans + Instrument Serif via `next/font`), spacing, motion.
-7. Tema terang satu surface: tanpa toggle, tanpa varian tema ganda (satu surface seperti sebelumnya — hanya dibalik dari gelap ke terang).
+**P1 (nice-to-have):** copy polish, micro-interaction hover, pembersihan aset tak terpakai.
 
-### In-scope (P1 — pelengkap)
+**Out of scope:** migrasi TypeScript, CMS/blog/i18n/halaman tambahan, dark-mode toggle, backend/auth/analytics, framer-motion/three.js/backdrop canvas (sudah dibuang), pertanyaan harga paket lama (sudah dihapus dari halaman).
 
-8. Micro-interactions + scroll-reveal (framer-motion, restrained — lihat `design.md` §6).
-9. Copywriting polish persuasif (makna & angka dikunci §6).
-10. Hapus aset template tak terpakai + uninstall `three` (tidak lagi dipakai).
+## 5. Struktur Section (page.js)
 
-### Out-of-scope (eksplisit tidak dikerjakan)
-
-- Migrasi TypeScript, CMS/blog, i18n, halaman tambahan, analytics/event tracking.
-- Three.js/WebGL, Spline, R3F/Drei untuk efek apapun di halaman ini.
-- Dark mode / toggle tema, auth, backend, perubahan harga/fitur bisnis.
-
-## 5. Struktur Section & Prioritas
-
-Urutan final (keputusan owner: **proof early** — tetap, tidak berubah di v1.1):
-
-| Urutan | Section | Prioritas | Alasan posisi |
+| # | Section | Latar | Posisi |
 |---|---|---|---|
-| 1 | Navbar (logo, status badge, CTA WA) | P0 | orientasi + CTA selalu terlihat |
-| 2 | Hero (headline, CTA, status card, backdrop kontur) | P0 | <10 detik paham tawaran; elegan-restraint sebagai kesan pertama |
-| 3 | Strip teknologi | P0 | kredibilitas cepat, murah secara vertikal |
-| 4 | **Portfolio (naik ke atas)** | P0 | bukti sebelum klaim — menjawab keraguan utama |
-| 5 | Layanan & Keahlian | P0 | mengkategorikan kebutuhan pengunjung |
-| 6 | Estimasi Harga | P0 | angka setelah bukti → terasa wajar |
-| 7 | Alur Pemesanan | P0 | menurunkan friksi ("bagaimana cara pesan?") |
-| 8 | Testimoni | P1 | penguat sosial menjelang keputusan |
-| 9 | FAQ | P1 | menangani objeksi terakhir (instalasi, source code, revisi) |
-| 10 | Final CTA + Footer | P0 | CTA kedua setelah semua objeksi terjawab |
+| 0 | Navbar | transparan → sticky | fixed atas |
+| 1 | Hero | terang | H1 + poster + meta |
+| 2 | Layanan | gelap `bg-ink` | 4 kolom hairline |
+| 3 | Alur | terang | 4 baris hairline + estimasi |
+| 4 | **Informasi (baru)** | terang | harga + 6 alasan + CTA WA |
+| 5 | Karya | gelap `bg-ink` | 3 phone mockup + statistik |
+| 6 | Testimoni | terang | quote besar + kartu rata-rata + 2 quote |
+| 7 | FAQ | terang | accordion 3 item |
+| 8 | Final CTA | `bg-teal-deep` | H2 + CTA inverse + IG |
+| 9 | Footer | gelap `bg-ink` | 3 kolom |
+| — | BackToTop | — | tombol muncul saat scroll |
 
-Detail layout tiap section ada di `design.md` §4.
+Nav: Karya · Layanan · **Informasi** · Alur · FAQ · [Hubungi Kami].
 
-## 6. Inventaris Konten Terkunci (makna tidak boleh berubah)
+## 6. Inventaris Konten Terkunci (sumber: `src/lib/content.js`)
 
-- **Hero:** headline "Solusi Pembuatan Website & Aplikasi Kustom — Adaptif, Cepat, & Profesional"; CTA "Konsultasi Gratis via WhatsApp" → `https://wa.me/6281392684232` (tab baru, `rel noopener`).
-- **Info status (bentuk baru di v1.1, isi sama):** status "Siap Menerima Proyek Baru"; layanan ["Sistem Informasi", "Web Bisnis & UMKM", "Aplikasi Kustom", "Tugas Akhir & Skripsi"]; garansi; kualitas "100% Bebas Bug". Disajikan sebagai badge + checklist + baris garansi — bukan blok kode.
-- **Teknologi:** Next.js & React, Laravel, Node.js, MySQL, Tailwind CSS, Flutter.
-- **Layanan:** Sistem Informasi (manajemen, kasir, inventori, portal kampus/sekolah); SPK & Algoritma (SPK, Data Mining, algoritma skripsi); Web Profil & Bisnis.
-- **Harga:** Skripsi/Tugas Akhir mulai Rp 750.000; Web Bisnis/Company Profile mulai Rp 1.500.000.
-- **Portfolio:** (1) Presensi Mobile PMI Kab. Cilacap — Geofencing & Haversine — `/presensi-pmi.png`; (2) Presensi Siswa SMAN 2 Cilacap — multi-role, cetak Excel — `/presensi-smanda.png`; (3) Sipta mobile pengelola TA — `/kelola-tugas-akhir-mobile.png`. Tag teknologi dipertahankan. Path gambar **tidak berubah**.
-- **Alur:** Konsultasi → DP 40% → Proses & Demo → Serah Terima (+source code) → Estimasi 14–30 hari kerja.
-- **Testimoni:** Aulia.P (5★), Arfilal.F (4★), Revano.A (4,5★) + teks & status "Mahasiswa Teknik Informatika" (teks asli dipertahankan apa adanya).
-- **FAQ:** instalasi remote sampai jalan; source code 100% milik klien setelah pelunasan; garansi revisi minor 3×, major berbayar.
-- **Footer:** © 2026 SyntaxLab; Instagram `https://instagram.com/syntaxlab_official`; TikTok `https://tiktok.com/@syntax.lab5`; favicon `/favicon.png`.
+| Section | Konten (angka/teks/fakta tidak boleh berubah) |
+|---|---|
+| Hero | H1 `titleA/titleAccent/titleB`: **"Website & Aplikasi kustom, cepat & rapi"** · sub "Bikin sistem yang beneran jalan — rapi, bebas bug, dibimbing sampai paham." · CTA **"Konsultasi Gratis via WhatsApp"** → `site.wa` · catatan "Gratis konsultasi & estimasi" · status "● Siap Menerima Proyek Baru" · tech: **5** item (Next.js, Laravel, Node.js, MySQL, Flutter) · poster: **kalimat biasa** (bukan "WE ARE YOUR SOLUTION") + meta "Web · Aplikasi · Sistem Informasi" |
+| Layanan | 4 kartu (angka, judul, tag, deskripsi) + meta strip bawah (garansi 3× revisi, stack, "Kode rapi bebas bug") |
+| Alur | 5 tahap (S1–S4 + "Siklus bersifat berulang…") + estimasi 14–30 hari + catatan "Biaya dibayar dua tahap: DP 40% di muka…" |
+| **Informasi (baru)** | `price`: **"Mulai dari Rp500 ribu"** · `priceNote`: "Lingkup fitur menentukan angka akhir — patokan mulai dari Rp500 ribu, dikunci hitam-putih saat konsultasi." · **6 alasan** (framing perusahaan/UMKM, tanpa konteks mahasiswa/TA): patokan harga di depan · bayar bertahap DP 40% · bayar sesuai lingkup fitur · source code milik klien setelah lunas · garansi revisi 3× · estimasi waktu jelas 14–30 hari · CTA **"Tanya harga via WhatsApp"** → `site.wa` |
+| Karya | 3 proyek (judul, path gambar, deskripsi, tags) + statistik (nilai + label) |
+| Testimoni | 3 testimoni (teks asli, termasuk emoji — dipertahankan) + label "Rata-rata dari 3 ulasan" + strip teknologi |
+| FAQ | 3 pertanyaan + jawaban (teks asli) |
+| Final Cta | H2 + sub + CTA + link Instagram |
+| Footer | brand · kolom "Jelajahi" (nav) · kolom "Kontak" (WA/Instagram/TikTok/email) · baris bawah "© 2026 SyntaxLab" |
 
-## 7. Asumsi Teknis & Constraint
+**Catatan harga:** kata "Rp750.000" dan "Rp1.500.000" tidak boleh muncul di mana pun di halaman; satu-satunya angka harga = "Mulai dari Rp500 ribu".
 
-1. Tetap JavaScript (`.js`, `jsconfig.json`) — tidak ada migrasi TS tanpa permintaan.
-2. Tailwind v4 (sintaks `@theme` + CSS vars untuk token).
-3. Dependensi animasi/interaksi **hanya** `framer-motion`. Canvas 2D = API browser murni (tanpa dep). Font via `next/font` (tanpa dep). `three` di-uninstall.
-4. Gambar portfolio via `next/image` (`sizes` responsif, `alt` deskriptif); path `/public` tidak berubah.
-5. Canvas dimuat client-only (pola rAF-upgrade pasca-hydration, pelajaran insiden v1.0); render 1 frame statis + diam saat `prefers-reduced-motion`; pause `rAF` saat offscreen/tab hidden; DPR clamp ≤1.5.
-6. Mobile-first; backdrop tetap halus & murah di perangkat low-end (lihat budget `design.md` §5).
-7. Komentar singkat wajib di setup canvas dan bagian kompleks lain.
+## 7. Asumsi Teknis
+
+- Motion: hanya GSAP + ScrollTrigger (`lib/gsap.js`, `lib/useReveal.js`), guard `prefers-reduced-motion`.
+- Font: `next/font` Geist + JetBrains_Mono (layout.js) — `font-serif` di-remap ke Geist.
+- Gambar: `next/image`, 3 PNG mockup + 1 PNG frame iPhone; screenshot clip dengan `overflow-hidden` + `borderRadius "14% / 6.4%"`.
+- Konten: `content.js` = satu-sumber; link WA `6281392684232` dipertahankan persis.
+- Nol dependensi baru untuk Rencana A/B — murni edit komponen/konten.
 
 ## 8. Risiko & Mitigasi
 
 | Risiko | Mitigasi |
 |---|---|
-| Canvas 2D membebani mobile/low-end | tanpa dep & tanpa WebGL; ±40 stroke statis digeser (bukan dihitung ulang); DPR ≤1.5; pause offscreen/hidden; target Lighthouse §3 |
-| Tema terang terasa generik (cream+terracotta template) | emas dipakai hemat (CTA, marker, eyebrow rule); paper hangat + ink pekat + hairline presisi — lihat `design.md` §2.1 |
-| framer-motion terasa "template fade-up di mana-mana" | motion spec restrained di `design.md` §6 (satu momen hero + reveal opacity-only) |
-| Copy polish mengubah makna harga/fitur | §6 dikunci; review per section membandingkan dengan halaman live |
-| Penghapusan terminal mengecewakan pengunjung teknis lama | info yang sama tetap tampil (badge + checklist); audiens primer/sekunder di §2 tidak mengandalkan estetika kode |
+| Penghapusan dua paket harga menurunkan kejelasan biaya | "Mulai dari Rp500 ribu" + `priceNote` + 6 alasan; detail lewat CTA WA (harga dikunci saat konsultasi) |
+| Section Informasi framing UMKM sementara persona primer mahasiswa | Harga "mulai dari" berlaku umum; layanan & FAQ tetap menyebut TA; angka §6 tidak diubah di luar `info` |
+| Sweep anti-AI bikin halaman terasa datar | Ritme gelap/terang + whitespace + hairline + aksen teal fungsional (design.md §1) |
+| Hapus `SectionLabel` meninggalkan sisa teks nyangkut | Verifikasi grep: nol `SectionLabel`, `animate-ping`, `text-teal">` di heading; build + review visual per section |
 
-## 9. Acceptance Criteria (definisi selesai)
+## 9. Acceptance Criteria
 
-- [ ] `npm run build` sukses; tidak ada `console.log`, import tak terpakai; `three` tidak ada di bundle.
-- [ ] Semua 9 section tampil sesuai urutan §5 di mobile/tablet/desktop tanpa overflow horizontal.
-- [ ] 3 gambar portfolio + favicon tampil (path existing, via `next/image`).
-- [ ] Link WA/IG/TikTok persis seperti §6; CTA membuka tab baru dengan `rel="noopener noreferrer"`.
-- [ ] Angka (harga, DP 40%, 14–30 hari, revisi 3×) sama dengan halaman live.
-- [ ] Skor Lighthouse memenuhi §3 (diukur setelah build produksi).
-- [ ] FAQ bisa dibuka via keyboard (`Enter`/`Space`), `aria-expanded` benar; canvas `aria-hidden`, diam saat reduced-motion.
-- [ ] Tidak ada hydration error (konsol bersih saat hard refresh).
-- [ ] Review owner per section selesai; temuan FAIL kembali ke implementasi (maksimal 2 putaran per section sebelum eskalasi).
+1. `npm run build` sukses; nol `console.log`, nol import mati.
+2. `ui/SectionLabel.jsx` dan `ui/StatusCard.jsx` tidak ada; `Pricing.jsx` sudah jadi `Info.jsx`; `page.js` mengimpor urutan §5; nav menunjuk `#informasi`.
+3. Checklist design.md §1.1 (11 baris) terpenuhi — review visual per section: heading solid, tanpa eyebrow, angka netral, Alur/Informasi baris hairline, poster kalimat biasa, tanpa ping.
+4. Seluruh angka/teks/link §6 identik dengan `content.js`; "Mulai dari Rp500 ribu" satu-satunya angka harga.
+5. `prefers-reduced-motion` dihormati; FAQ punya `aria-expanded`/`region`; satu `h1`; alt 3 PNG deskriptif.
+6. Review owner atas ketiga dokumen + hasil visual = disetujui.
 
 ## 10. Fase Kerja
 
-1. **Dokumen v1.1** (sekarang): revisi `PRD.md` + `design.md` → review owner.
-2. **Rework implementasi** mengikuti v1.1 section per section (uninstall `three`, token terang, font baru, status card, backdrop canvas, hapus terminal/radar).
-3. **Pass akhir**: a11y + performa + `npm run build` → review final → merge/deploy (tanpa push tanpa perintah eksplisit).
+1. **Dokumen v2.0** (PRODUCT.md, design.md, PRD.md) → review owner. ← sekarang
+2. **Rencana A** — `content.js` + `Info.jsx` + nav + `page.js`.
+3. **Rencana B** — sweep anti-AI per checklist design.md §1.1.
+4. **Verifikasi** — `npm run build`, grep sweep, screenshot per section → review owner.

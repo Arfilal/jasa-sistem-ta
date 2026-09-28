@@ -1,20 +1,23 @@
 @import "tailwindcss";
 
+/* Token "Clean Navy / Teal" — palet cream/gold lama dihapus total (spec §3). */
 @theme {
-  --color-paper: #faf8f4;
-  --color-panel: #ffffff;
-  --color-panel-2: #f3efe6;
-  --color-line: #e4ded2;
-  --color-ink: #1a1d21;
-  --color-muted: #5c6470;
-  --color-faint: #8a8f98;
-  --color-gold: #c9a254;
-  --color-gold-deep: #7a5f1e;
-  --color-ok: #1e9e6a;
-  --color-star: #9c6d00;
+  --color-paper: #fafaf8;
+  --color-surface: #ffffff;
+  --color-line: #e6e8ec;
+  --color-ink: #0b1120;
+  --color-navy-2: #131c2e;
+  --color-teal: #0d9488;
+  --color-teal-deep: #0a6e67;
+  --color-teal-soft: #e7f5f3;
+  --color-muted: #4a5565;
+  --color-faint: #6d7079;
+  --color-ok: #0d9488;
 
-  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-instrument), Georgia, serif;
+  /* ponytail: --font-serif di-remap ke Geist juga (body sans, "minimalis") */
+  --font-display: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
 }
 
 html {
@@ -25,27 +28,48 @@ html {
   html {
     scroll-behavior: auto;
   }
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
   background-color: var(--color-paper);
   color: var(--color-ink);
-  font-family: var(--font-display);
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
+/* Heading & kontrol memakai display; body memakai --font-serif (kini sans). */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: var(--font-display);
+}
+
 ::selection {
-  background-color: var(--color-gold);
-  color: var(--color-ink);
+  background-color: var(--color-teal);
+  color: #ffffff;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-gold-deep);
+  outline: 2px solid var(--color-teal);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* angka harga: presisi tabular tanpa font mono */
+/* angka harga: presisi tabular */
 .tnum {
   font-variant-numeric: tabular-nums;
 }

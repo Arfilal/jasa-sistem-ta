@@ -58,3 +58,93 @@ export function ArrowRightIcon({ className = "h-4 w-4" }) {
     </svg>
   );
 }
+
+// Ikon stroke untuk kartu Layanan (garis tipis, 24×24, currentColor).
+const strokeProps = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.75",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  "aria-hidden": true,
+};
+
+export function DatabaseIcon({ className = "h-5 w-5" }) {
+  return (
+    <svg className={className} {...strokeProps}>
+      <ellipse cx="12" cy="5.5" rx="7.5" ry="3" />
+      <path d="M4.5 5.5v6c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3v-6" />
+      <path d="M4.5 11.5v6c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3v-6" />
+    </svg>
+  );
+}
+
+export function BrowserIcon({ className = "h-5 w-5" }) {
+  return (
+    <svg className={className} {...strokeProps}>
+      <rect x="3" y="4.5" width="18" height="15" rx="2.5" />
+      <path d="M3 9h18" />
+      <path d="M6 6.75h.01M8.75 6.75h.01" />
+    </svg>
+  );
+}
+
+export function CodeIcon({ className = "h-5 w-5" }) {
+  return (
+    <svg className={className} {...strokeProps}>
+      <path d="M8.5 8.5L4 12l4.5 3.5" />
+      <path d="M15.5 8.5L20 12l-4.5 3.5" />
+      <path d="M13.5 5.5l-3 13" />
+    </svg>
+  );
+}
+
+export function CapIcon({ className = "h-5 w-5" }) {
+  return (
+    <svg className={className} {...strokeProps}>
+      <path d="M12 4.5L21.5 9 12 13.5 2.5 9 12 4.5z" />
+      <path d="M6.5 11.2v4.3c0 1.5 2.46 2.7 5.5 2.7s5.5-1.2 5.5-2.7v-4.3" />
+      <path d="M21.5 9v4.5" />
+    </svg>
+  );
+}
+
+// Ikon stroke untuk papan informasi Manfaat.
+export function ShieldCheckIcon({ className = "h-5 w-5" }) {
+  return (
+    <svg className={className} {...strokeProps}>
+      <path d="M12 3.2l7 2.4v5.6c0 4.4-2.9 8-7 9.6-4.1-1.6-7-5.2-7-9.6V5.6l7-2.4z" />
+      <path d="M9.2 11.8l2 2 3.6-3.7" />
+    </svg>
+  );
+}
+
+export function ClockIcon({ className = "h-5 w-5" }) {
+  return (
+    <svg className={className} {...strokeProps}>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 7.2V12l3.2 2" />
+    </svg>
+  );
+}
+
+export function ChartIcon({ className = "h-5 w-5" }) {
+  return (
+    <svg className={className} {...strokeProps}>
+      <path d="M4 19.5h16" />
+      <path d="M6.8 19.5v-5.2" />
+      <path d="M12 19.5V9.5" />
+      <path d="M17.2 19.5v-7.4" />
+    </svg>
+  );
+}
+
+export function TrendingUpIcon({ className = "h-5 w-5" }) {
+  return (
+    <svg className={className} {...strokeProps}>
+      <path d="M3.8 16.4l4.9-4.9 3.4 3.4 5.9-6" />
+      <path d="M14.2 8.9h4.2v4.2" />
+    </svg>
+  );
+}

@@ -13,75 +13,85 @@ export const site = {
 };
 
 export const hero = {
-  label: "Jasa pembuatan sistem",
-  titleA: "Solusi Pembuatan Website & Aplikasi Kustom",
-  titleAccent: "Adaptif, Cepat,",
-  titleB: "& Profesional",
-  sub: "Jasa pengembangan software, company profile, sistem informasi, hingga tugas akhir. Kodingan rapi, bebas bug, dan dibimbing sampai paham.",
+  titleA: "Sistem yang",
+  titleAccent: "benar-benar dipakai,",
+  titleB: "bukan cuma dikerjakan",
+  sub: "Company profile, sistem informasi, sampai aplikasi tugas akhir, dibangun dari nol dengan kode yang rapi, dan kamu dibimbing sampai paham cara kerjanya, bukan cuma terima jadi.",
+  poster: "Kami adalah solusi Anda.",
+  posterMeta: "Web · Aplikasi · Sistem Informasi",
 };
 
 // Info status (pengganti terminal v1.0): isi identik, bentuk kartu elegan.
 export const status = {
   badge: "Siap Menerima Proyek Baru",
-  services: [
-    "Sistem Informasi",
-    "Web Bisnis & UMKM",
-    "Aplikasi Kustom",
-    "Tugas Akhir & Skripsi",
-  ],
   guarantee: "Garansi revisi · 100% bebas bug",
 };
 
-export const tech = [
-  "Next.js & React",
-  "Laravel",
-  "Node.js",
-  "MySQL",
-  "Tailwind CSS",
-  "Flutter",
+// Urutan nav = urutan section di halaman.
+export const nav = [
+  { href: "#layanan", label: "Layanan" },
+  { href: "#manfaat", label: "Manfaat" },
+  { href: "#informasi", label: "Harga" },
+  { href: "#karya", label: "Portofolio" },
+  { href: "#faq", label: "FAQ" },
 ];
 
+// Layanan — 4 jenis sistem yang dikerjakan (section gelap).
 export const services = [
   {
-    title: "Sistem Informasi",
-    desc: "Pembuatan sistem manajemen, kasir, inventori, dan portal web kampus atau sekolah.",
-    highlight: true,
+    title: "Sistem Informasi & Manajemen",
+    desc: "Otomatisasi operasional bisnis dan instansi. Pembangunan sistem kasir, manajemen inventaris, hingga portal kampus atau sekolah yang terintegrasi untuk meningkatkan efisiensi operasional.",
   },
   {
-    title: "SPK & Algoritma",
-    desc: "Implementasi Sistem Pendukung Keputusan, Data Mining, atau algoritma skripsi spesifik.",
-    highlight: false,
+    title: "Website Bisnis & Company Profile",
+    desc: "Fondasi digital yang kredibel. Pembuatan website responsif dan elegan yang berfungsi sebagai etalase digital untuk membangun kepercayaan pasar dan meningkatkan citra bisnis.",
   },
   {
-    title: "Web Profil & Bisnis",
-    desc: "Website company profile yang responsif, cepat, dan elegan untuk meningkatkan kredibilitas.",
-    highlight: false,
+    title: "Pengembangan Aplikasi Kustom",
+    desc: "Solusi teknologi berstandar industri. Pengembangan aplikasi mobile maupun web yang dirancang khusus mengikuti alur kerja spesifik kebutuhan bisnis atau organisasi Anda.",
+  },
+  {
+    title: "Implementasi Sistem Akademis",
+    desc: "Penerapan riset menjadi sistem fungsional. Pengembangan Sistem Pendukung Keputusan (SPK), Data Mining, atau algoritma spesifik untuk kebutuhan Tugas Akhir/Skripsi dengan kode yang terstruktur.",
   },
 ];
 
-export const pricing = [
+// Manfaat — 4 alasan kenapa sistem digital penting (section terang).
+export const benefits = [
   {
-    label: "Paket skripsi",
-    title: "Paket Skripsi / Tugas Akhir",
-    price: "Rp 750.000",
-    prefix: "Mulai dari",
-    desc: "Cocok untuk mahasiswa tingkat akhir yang butuh sistem siap sidang lengkap dengan bimbingan.",
-    featured: false,
+    title: "Kredibilitas & Kepercayaan (Untuk Bisnis & UMKM)",
+    desc: "Calon pelanggan menilai profesionalismemu dari kehadiran online. Website company profile yang rapi dan responsif menunjukkan bisnismu bisa dipercaya.",
   },
   {
-    label: "Paket bisnis",
-    title: "Paket Web Bisnis / Company Profile",
-    price: "Rp 1.500.000",
-    prefix: "Mulai dari",
-    desc: "Cocok untuk UMKM, instansi, atau perusahaan yang ingin memperluas jangkauan digital.",
-    featured: true,
+    title: "Efisiensi Operasional 24/7 (Untuk Instansi & Bisnis)",
+    desc: "Proses manual lambat dan gampang salah. Sistem informasi atau aplikasi kustom bikin penjualan, inventaris, dan alur kerja instansi jalan otomatis, 24 jam.",
+  },
+  {
+    title: "Mengubah Data Menjadi Keputusan (Untuk Skripsi & Riset)",
+    desc: "Kamu bisa mengumpulkan, mengolah, dan menganalisis data langsung dari sistem. Dari Data Mining sampai Sistem Pendukung Keputusan (SPK), metode di skripsi diuji dengan data nyata.",
+  },
+  {
+    title: "Daya Saing & Skalabilitas Masa Depan",
+    desc: "Tanpa sistem yang terstruktur, bisnis makin lambat saat datanya makin banyak. Sistem yang dirancang khusus bisa ikut tumbuh seiring bisnismu berkembang.",
   },
 ];
+
+// Section Harga (gantikan kartu harga — keputusan owner 27 Sep 2026).
+// Harga paket lama (Rp750.000 / Rp1.500.000) dihapus dari halaman.
+export const info = {
+  title: "Investasi digital yang transparan",
+  sub: "Tidak ada biaya tersembunyi. Semua yang kami kerjakan, harganya jelas sejak awal.",
+  price: "Mulai dari Rp500.000",
+  priceNote:
+    "Tarif akhir menyesuaikan fitur yang kamu butuh. Angkanya kita kunci bersama sebelum pengerjaan dimulai.",
+  cta: "Tanya harga via WhatsApp",
+};
 
 // descBold: frasa yang dirender tebal (penekanan visual saja, teks sama).
 export const portfolio = [
   {
     img: "/presensi-pmi.png",
+    url: "/presensi-pmi",
     alt: "Tangkapan layar aplikasi Sistem Presensi Mobile PMI Kabupaten Cilacap",
     title: "Sistem Presensi Mobile (PMI Kab. Cilacap)",
     desc: "Aplikasi presensi khusus karyawan dan relawan PMI berbasis Geofencing dan perhitungan radius menggunakan rumus Haversine agar absensi akurat.",
@@ -90,6 +100,7 @@ export const portfolio = [
   },
   {
     img: "/presensi-smanda.png",
+    url: "/presensi-smanda",
     alt: "Tangkapan layar Sistem Presensi Siswa SMAN 2 Cilacap",
     title: "Sistem Presensi Siswa (SMAN 2 Cilacap)",
     desc: "Platform web & mobile terintegrasi untuk absensi siswa dengan Geofencing & foto real-time. Dilengkapi multi-role (Wali Kelas, Kesiswaan, Operator) & cetak Excel otomatis.",
@@ -98,34 +109,12 @@ export const portfolio = [
   },
   {
     img: "/kelola-tugas-akhir-mobile.png",
+    url: "/sipta-ta",
     alt: "Tangkapan layar aplikasi Sipta pengelola tugas akhir mobile",
     title: "Sipta - Pengelolaan Tugas Akhir Mobile",
     desc: "Aplikasi pengelolaan progress tugas akhir berbasis mobile untuk dosen dan mahasiswa dalam skala jurusan. Membantu tracking proposal, pembimbing, hingga seminar.",
     descBold: ["dosen dan mahasiswa", "tracking proposal, pembimbing, hingga seminar"],
     tags: ["Mobile App", "Skala Jurusan", "Push Notif"],
-  },
-];
-
-export const process = [
-  {
-    title: "Konsultasi",
-    desc: "Diskusikan fitur yang dibutuhkan dan kesepakatan harga sistem.",
-  },
-  {
-    title: "DP Masuk",
-    desc: "Pembayaran uang muka minimal 40% untuk memulai koding.",
-  },
-  {
-    title: "Proses & Demo",
-    desc: "Pengerjaan sistem disertai update progres dan demo hasil.",
-  },
-  {
-    title: "Serah Terima",
-    desc: "Pelunasan sisa biaya dan penyerahan source code lengkap.",
-  },
-  {
-    title: "Estimasi Waktu",
-    desc: "14 - 30 hari kerja tergantung tingkat kesulitan sistem.",
   },
 ];
 
@@ -155,15 +144,15 @@ export const testimonials = [
 
 export const faqs = [
   {
-    q: "Apakah dibantu proses instalasi ke laptop?",
-    a: "Tentu! Kami akan membantu proses instalasi sistem ke laptop kamu via remote (Google Meet / AnyDesk) sampai sistem benar-benar bisa berjalan dan siap didemokan ke dosen.",
+    q: "Apakah proses instalasi sistem dibantu?",
+    a: "Ya. Tim kami akan memandu proses instalasi sistem hingga beroperasi optimal melalui sesi remote (Google Meet / AnyDesk), sehingga siap untuk presentasi atau implementasi langsung.",
   },
   {
-    q: "Apakah source code sepenuhnya diberikan?",
-    a: "Ya, 100% source code (termasuk database) akan menjadi milik kamu dan akan diserahkan setelah proses pelunasan selesai.",
+    q: "Apakah source code sepenuhnya diserahkan?",
+    a: "Ya, 100% kepemilikan source code dan struktur database akan diserahkan sepenuhnya kepada Anda setelah proses pembayaran diselesaikan.",
   },
   {
-    q: "Apakah mendapat garansi revisi?",
-    a: "Kami memberikan garansi gratis revisi minor (perbaikan bug, ubah warna/teks) maksimal 3 kali. Untuk revisi major (penambahan fitur baru atau ubah alur) akan dikenakan biaya tambahan sesuai kesepakatan.",
+    q: "Apakah terdapat garansi revisi?",
+    a: "Kami menyediakan garansi revisi minor (seperti penyesuaian tampilan atau perbaikan bug) maksimal 3 kali. Penambahan fitur baru atau perubakan alur utama (major) akan dikenakan biaya terpisah yang disepakati di awal.",
   },
 ];

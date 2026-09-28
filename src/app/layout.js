@@ -1,17 +1,19 @@
-import { Plus_Jakarta_Sans, Instrument_Serif } from "next/font/google";
+import { Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+// ponytail: satu font sans (Geist) untuk display & body — permintaan "minimalis";
+// italic tidak dipakai sama sekali, jadi tidak di-load. `font-serif` di komponen
+// tetap ada, cuma variabelnya di-remap ke Geist di globals.css.
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -32,8 +34,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id" className={`${jakarta.variable} ${instrument.variable}`}>
-      <body className="min-h-screen overflow-x-clip bg-paper font-display text-ink antialiased">
+    <html
+      lang="id"
+      className={`${geist.variable} ${jetbrains.variable}`}
+    >
+      <body className="min-h-screen overflow-x-clip bg-paper font-serif text-ink antialiased">
         {children}
       </body>
     </html>

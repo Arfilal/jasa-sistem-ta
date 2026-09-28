@@ -20,7 +20,7 @@ export default function BackToTop() {
       aria-label="Kembali ke atas"
       tabIndex={show ? 0 : -1}
       aria-hidden={!show}
-      className={`fixed bottom-6 right-6 z-50 inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-panel text-xl text-ink shadow-sm transition-all duration-300 hover:-translate-y-px hover:border-gold active:translate-y-0 active:scale-95 ${
+      className={`fixed bottom-6 right-6 z-50 inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-surface text-xl text-ink transition-all duration-300 hover:border-teal hover:text-teal-deep active:scale-95 ${
         show
           ? "translate-y-0 opacity-100"
           : "pointer-events-none translate-y-3 opacity-0"

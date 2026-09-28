@@ -4,7 +4,7 @@ export default function Section({ id, labelledby, wide = false, className = "", 
     <section
       id={id}
       aria-labelledby={labelledby}
-      className={`scroll-mt-24 px-6 py-24 lg:py-32 ${className}`}
+      className={`scroll-mt-1 px-6 py-24 lg:py-36 ${className}`}
     >
       <div className={`mx-auto w-full ${wide ? "max-w-7xl" : "max-w-6xl"}`}>
         {children}

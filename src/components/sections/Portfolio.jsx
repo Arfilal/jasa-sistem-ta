@@ -1,6 +1,8 @@
+// Karya / Portfolio — section gelap, 3 phone mockup berdampingan
+// (satu-satunya tempat gambar tampil; laptop 3D dihapus, three.js ikut hilang).
+
 import Image from "next/image";
 import Section from "@/components/ui/Section";
-import SectionLabel from "@/components/ui/SectionLabel";
 import Reveal from "@/components/ui/Reveal";
 import { portfolio } from "@/lib/content";
 
@@ -12,7 +14,7 @@ function rich(desc, bolds) {
   );
   return desc.split(pattern).map((part, i) =>
     bolds.includes(part) ? (
-      <strong key={i} className="font-semibold text-ink">
+      <strong key={i} className="font-semibold text-white">
         {part}
       </strong>
     ) : (
@@ -27,7 +29,7 @@ function Tags({ tags }) {
       {tags.map((t) => (
         <span
           key={t}
-          className="rounded-full border border-line bg-paper px-3 py-1 text-[11px] font-medium text-muted"
+          className="rounded-full border border-white/20 px-3 py-1.5 font-mono text-[11px] uppercase tracking-wide text-white/50"
         >
           {t}
         </span>
@@ -36,68 +38,65 @@ function Tags({ tags }) {
   );
 }
 
-export default function Portfolio() {
-  const [featured, ...rest] = portfolio;
-
+function Phone({ src, alt }) {
   return (
-    <Section id="karya" labelledby="karya-h" wide>
+    <div className="relative mx-auto aspect-[1379/2756] w-full max-w-[270px]">
+      {/* radius ~164px PNG (sedikit > hole 160px) agar sudut SS terpotong
+          di dalam lubang layar — sudut persegi menembus lengkung body. */}
+      <div
+        className="absolute overflow-hidden"
+        style={{ inset: "3.63% 7.25%", borderRadius: "14% / 6.4%" }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 1024px) 70vw, 270px"
+          loading="lazy"
+          className="object-cover object-top"
+        />
+      </div>
+      <Image
+        src="/mockup/iphone-16-teal.png"
+        alt=""
+        fill
+        sizes="270px"
+        className="pointer-events-none object-contain"
+      />
+    </div>
+  );
+}
+
+export default function Portfolio() {
+  return (
+    <Section id="karya" labelledby="karya-h" wide className="bg-ink">
       <Reveal>
-        <SectionLabel>Karya nyata</SectionLabel>
-        <h2
-          id="karya-h"
-          className="max-w-[22ch] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold tracking-tight text-ink"
-        >
-          Sistem yang sudah jalan di lapangan
-        </h2>
-        <p className="mt-4 max-w-[60ch] leading-relaxed text-muted">
-          Proyek tugas akhir dan aplikasi nyata yang kami bangun dari nol —
-          bukan mockup, bukan template.
-        </p>
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <h2
+            id="karya-h"
+            className="max-w-[22ch] text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.02em] text-white"
+          >
+            Portofolio
+          </h2>
+          <p className="max-w-[46ch] leading-relaxed text-white/60">
+            Daftar proyek yang telah dikerjakan.
+          </p>
+        </div>
       </Reveal>
 
-      {/* kartu fitur: proyek utama, horizontal */}
-      <Reveal className="mt-12">
-        <article className="group grid overflow-hidden rounded-[14px] border border-line bg-panel shadow-[0_24px_60px_-40px_rgba(26,29,33,0.3)] md:grid-cols-2">
-          <div className="relative h-60 border-b border-line bg-panel-2 md:h-auto md:min-h-[320px] md:border-b-0 md:border-r">
-            <Image
-              src={featured.img}
-              alt={featured.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-contain p-6 transition-transform duration-500 group-hover:scale-[1.03]"
-            />
-          </div>
-          <div className="flex flex-col justify-center gap-5 p-8 lg:p-12">
-            <h3 className="text-2xl font-bold tracking-tight text-ink">
-              {featured.title}
-            </h3>
-            <p className="text-[15px] leading-relaxed text-muted">
-              {rich(featured.desc, featured.descBold)}
-            </p>
-            <Tags tags={featured.tags} />
-          </div>
-        </article>
-      </Reveal>
-
-      {/* dua kartu offset: ritme tak simetris, hierarki = prioritas */}
-      <div className="mt-8 grid gap-8 md:grid-cols-2">
-        {rest.map((p, i) => (
-          <Reveal key={p.title} delay={i * 0.08} className={i === 1 ? "md:mt-12" : ""}>
-            <article className="group flex h-full flex-col overflow-hidden rounded-[14px] border border-line bg-panel">
-              <div className="relative h-56 border-b border-line bg-panel-2">
-                <Image
-                  src={p.img}
-                  alt={p.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-contain p-6 transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-              </div>
-              <div className="flex flex-1 flex-col gap-4 p-7">
-                <h3 className="text-xl font-bold tracking-tight text-ink">
+      <div className="mt-12 grid gap-10 lg:grid-cols-3">
+        {portfolio.map((p, i) => (
+          <Reveal key={p.title} delay={i * 0.07}>
+            <article className="flex h-full flex-col">
+              <Phone src={p.img} alt={p.alt} />
+              <div className="mt-6 flex flex-1 flex-col gap-3">
+                <p className="font-mono text-[11px] text-white/40">
+                  {`0${i + 1}`}
+                </p>
+                <h3 className="text-lg font-bold leading-snug tracking-tight text-white">
                   {p.title}
                 </h3>
-                <p className="flex-1 text-sm leading-relaxed text-muted">
+                <p className="flex-1 text-sm leading-relaxed text-white/60">
                   {rich(p.desc, p.descBold)}
                 </p>
                 <Tags tags={p.tags} />
